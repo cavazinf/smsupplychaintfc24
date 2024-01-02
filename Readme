@@ -1,0 +1,42 @@
+# Contrato Inteligente de Cadeia de Suprimentos
+
+Este contrato inteligente em Solidity, implementa uma cadeia de suprimentos básica, permitindo o rastreamento do status de itens.
+
+## Funcionalidades
+
+- **Pedido de Item:** Os usuários podem solicitar a criação de um novo item na cadeia de suprimentos.
+- **Cancelamento de Item:** O criador do pedido pode cancelar um item pendente.
+- **Aprovação de Item:** O proprietário (owner) do contrato pode aprovar um item, alterando seu status para "Enviado".
+- **Envio de Item:** O proprietário (owner) do contrato pode marcar um item como "Entregue".
+
+## Estrutura do Contrato
+
+### Enum Status
+- `Ordered`: Indica que um item foi solicitado.
+- `Shipped`: Indica que o item foi enviado.
+- `Delivered`: Indica que o item foi entregue.
+- `Cancelled`: Indica que o item foi cancelado.
+
+### Struct Item
+- `id`: Identificador único do item.
+- `name`: Nome do item.
+- `status`: Status atual do item.
+- `orderedBy`: Endereço do usuário que fez o pedido.
+- `approvedBy`: Endereço do usuário que aprovou o envio.
+- `deliveredTo`: Endereço do usuário que recebeu a entrega.
+
+### Funções Principais
+- `orderItem`: Permite que os usuários solicitem um novo item.
+- `cancelItem`: Permite o cancelamento de um item solicitado.
+- `approveItem`: Aprova um item para envio.
+- `shipItem`: Marca um item como enviado.
+- `getItemStatus`: Retorna o status de um item.
+- `getItem`: Retorna todos os detalhes de um item.
+- `getItemCount`: Retorna a contagem total de itens.
+
+## Autor
+
+Este contrato inteligente foi desenvolvido por [Seu Nome].
+
+Sinta-se à vontade para contribuir ou sugerir melhorias neste contrato!
+
